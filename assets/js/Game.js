@@ -27,7 +27,11 @@ function playRound(userSelection) {
   } else {
     alert('Sorry, take this L');
   }
-  alert(
-    "Stats:\nW's: " + wins + '\nLosses: ' + computerWins + '\nTies ' + ties
-  );
+  alert("Stats:\nW's: " + wins + "\nL's: " + computerWins + '\nTies ' + ties);
+  var rematch = confirm('Would you lik a rematch?');
+  if (rematch) {
+    startGame();
+  } else {
+    alert('Thanks for playing!');
+  }
 }
