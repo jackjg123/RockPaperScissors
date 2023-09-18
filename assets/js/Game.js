@@ -25,13 +25,29 @@ function playRound(userSelection) {
     wins++;
     alert('Congrats! You got the W!');
   } else {
+    computerWins++;
     alert('Sorry, take this L');
   }
   alert("Stats:\nW's: " + wins + "\nL's: " + computerWins + '\nTies ' + ties);
-  var rematch = confirm('Would you lik a rematch?');
+  var rematch = confirm('Would you like a rematch?');
   if (rematch) {
     startGame();
   } else {
     alert('Thanks for playing!');
   }
 }
+
+// Verify users choice meets requirements
+function startGame() {
+  var userSelection = prompt(
+    'Enter R for Rock, P for Paper, or S for Scissors.'
+  );
+  if (userSelection === 'R' || userSelection === 'P' || userSelection === 'S') {
+    playRound(userSelection);
+  } else {
+    alert('Invalid input. Please enter R, P, or S.');
+    startGame();
+  }
+}
+
+startGame();
