@@ -27,4 +27,7 @@ function playRound(userSelection) {
   } else {
     alert('Sorry, take this L');
   }
+  alert(
+    "Stats:\nW's: " + wins + '\nLosses: ' + computerWins + '\nTies ' + ties
+  );
 }
